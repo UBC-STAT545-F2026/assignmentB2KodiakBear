@@ -32,9 +32,10 @@ You can install this package directly by calling `devtools::install_github("UBC-
 devtools::install_github("UBC-STAT545-F2026/assignmentB2KodiakBear")
 ```
 
-## Package Description
+## Package Components
  - `R`: A folder that contains the function `count_all_missing_by_group()`, which is held in a R script file
  - `man`: A folder that contains any figures used in knit files and `count_all_missing_by_group.Rd`
+ - `tests`: A folder that contains the `test that folder`, which contains four function tests for `count_all_missing_by_group()`. `tests` also contains the `testthat.R` file
  - `.Rbuildignore`: A file that tells R CMD Build which files to ignore
  - `.gitignore`: A file that tells git which files to ignore
  - `DESCRIPTION`: A file containing package metadata and dependencies

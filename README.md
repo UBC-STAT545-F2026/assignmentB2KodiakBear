@@ -24,31 +24,17 @@ You can install this package directly by calling
 
 ``` r
 devtools::install_github("UBC-STAT545-F2026/assignmentB2KodiakBear")
-#> 
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>          checking for file 'C:\Users\zhent\AppData\Local\Temp\Rtmpm2avBW\remotes109e85df252c0\UBC-STAT545-F2026-assignmentB2KodiakBear-2327985/DESCRIPTION' ...  ✔  checking for file 'C:\Users\zhent\AppData\Local\Temp\Rtmpm2avBW\remotes109e85df252c0\UBC-STAT545-F2026-assignmentB2KodiakBear-2327985/DESCRIPTION' (369ms)
-#>   ─  preparing 'assignmentB2KodiakBear':
-#> ✔  checking DESCRIPTION meta-information
-#>   Warning in as.POSIXlt.POSIXct(x, tz) :     Warning in as.POSIXlt.POSIXct(x, tz) :
-#>      unknown timezone 'British Columbia Standard Time'
-#>       ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>        NB: this package now depends on R (>= 4.1.0)
-#>      WARNING: Added dependency on R >= 4.1.0 because package code uses the
-#>      pipe |> or function shorthand \(...) syntax added in R 4.1.0.
-#>      File(s) using such syntax:
-#>        'count_all_missing_by_group.R'
-#> ─  building 'assignmentB2KodiakBear_0.0.0.9000.tar.gz'
-#>    
-#> 
 ```
 
-## Package Description
+## Package Components
 
 - `R`: A folder that contains the function
   `count_all_missing_by_group()`, which is held in a R script file
 - `man`: A folder that contains any figures used in knit files and
   `count_all_missing_by_group.Rd`
+- `tests`: A folder that contains the `test that folder`, which contains
+  four function tests for `count_all_missing_by_group()`. `tests` also
+  contains the `testthat.R` file
 - `.Rbuildignore`: A file that tells R CMD Build which files to ignore
 - `.gitignore`: A file that tells git which files to ignore
 - `DESCRIPTION`: A file containing package metadata and dependencies
