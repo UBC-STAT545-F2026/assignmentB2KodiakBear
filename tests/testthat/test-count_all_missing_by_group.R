@@ -1,3 +1,5 @@
+library(dplyr)
+
 test_that("Output matches direct call to dplyr", {
   small_tbl <- tribble(~group, ~var1, ~var2,
                        "A", 1, NA,
