@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  warning = FALSE
 )
 ```
 
@@ -18,47 +19,51 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of assignmentB2KodiakBear is to assist users in counting missing values for all columns by group
+## Overview
+
+The goal of assignmentB2KodiakBear is to provide a function that assists users in counting missing values for all columns by group. Given a data frame `data` and a column `group`, `count_all_missing_by_group()` creates a new data frame with one row per level of `group`. The first column of the output data frame contains the levels of `group`, and the rest of the columns contain the number of missing values for all columns in `data` except `group`.
 
 ## Installation
 
 You can install this package directly by calling `devtools::install_github("UBC-STAT545-F2026/assignmentB2KodiakBear")`
 
-``` r
+```{r}
 devtools::install_github("UBC-STAT545-F2026/assignmentB2KodiakBear")
 ```
 
-## Example
+## Package Description
+ - `R`: A folder that contains the function `count_all_missing_by_group()`, which is held in a R script file
+ - `man`: A folder that contains any figures used in knit files and `count_all_missing_by_group.Rd`
+ - `.Rbuildignore`: A file that tells R CMD Build which files to ignore
+ - `.gitignore`: A file that tells git which files to ignore
+ - `DESCRIPTION`: A file containing package metadata and dependencies
+ - `LICENSE`: A file containing basic license information
+ - `LICENSE.md`: A knit file containing license details
+ - `NAMESPACE`: A file that defines the functions within this package
+ - `README.Rmd`: An unknit version of this README file
+ - `README.md`: A knit version of this README file
+ - `assignmentB2KodiakBear.Rproj`: The R project file for this package, containing the R setting used when working on this package
+
+## Examples
 
 This example computes the number of missing values in the `airquality` dataset grouped by the `cyl` column.
-```{r example}
-##library(assignmentB2KodiakBear)
-##count_all_missing_by_group(airquality, Month)
+```{r}
+library(assignmentB2KodiakBear)
+library(dplyr)
+count_all_missing_by_group(airquality, Month)
 ```
 
 This example has the same output as the last example, but shows off an alternative way of invoking the `count_all_missing_by_group()`: piping the dataset into the function.
 ```{r}
-##library(assignmentB2KodiakBear)
-##airquality |> count_all_missing_by_group(Month) 
+library(assignmentB2KodiakBear)
+library(dplyr)
+airquality |> count_all_missing_by_group(Month) 
 ```
 
 The optional `.groups` argument allows us to keep the output grouped by the grouping column. See example below; notice how the output is a grouped tibble, rather than the ungrouped tibble output of the earlier examples.
 ```{r} 
-##count_all_missing_by_group(airquality, Month, .groups = "keep")
+library(assignmentB2KodiakBear)
+library(dplyr)
+count_all_missing_by_group(airquality, Month, .groups = "keep")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
